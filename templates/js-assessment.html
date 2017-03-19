@@ -47,7 +47,7 @@
   }
 
   changeByeButton.addEventListener('click', goodbyeMessage);
-  
+
 </script>
 
 <div class="hint">
@@ -73,9 +73,18 @@
   </form>
 </fieldset>
 
+
+
 <script>
   "use strict";
-  // code here for above problem
+  var subForm = document.getElementById('prevent-form-submission-form');
+
+  function popAlert(evt) {
+    alert("Hello beautiful person!");
+    evt.preventDefault(); 
+  }
+
+  subForm.addEventListener('submit', popAlert);
 </script>
 
 <div class="hint">
