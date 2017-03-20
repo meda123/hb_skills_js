@@ -197,8 +197,45 @@
 
 <script>
   "use strict";
-  // Obtain random number
-   var randNum = Math.floor((Math.random() * 100) + 1);
+
+  function gameSession(evt) {
+    evt.preventDefault();
+
+    var randNum = Math.floor(Math.random() * ((100-1)+1) +1);
+    console.log(randNum);
+
+    $("#play-guessing-game").attr("disabled", true);
+
+    $("#number-guessing-msg").html("Welcome to the guessing game! Enter a number between 1-100 in the box above. Good luck!");
+
+    $("#number-guessed").prop("disabled", false);
+
+    $("#try-this-number").prop("disabled", false);
+
+    $("#try-this-number").click(
+      function preventGuessRoute (evt)
+        { evt.preventDefault();
+
+        var userInput = parseInt($("#number-guessed").val());
+
+        if (userInput === randNum) {
+          $("#number-guessing-msg").html("You've got skills! You guessed the correct number, it is indeed " + randNum);
+          $("#try-this-number").prop("disabled", true);
+          $("#play-guessing-game").attr("disabled", false);
+
+        }
+        
+        else if (userInput < randNum){
+           $("#number-guessing-msg").html("Hmmm not quite, try a larger number. Your guess is too low.");
+        }
+
+        else {
+          $("#number-guessing-msg").html("Slow down there! Your guess is too large.");
+        }
+
+        });
+  }
+  $("#play-guessing-game").on("click", gameSession);
   
 </script>
 
