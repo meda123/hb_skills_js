@@ -108,21 +108,23 @@
   "use strict";
 
 //  Here's a stub of a function you can use!
+  function reverseString() {
+  var msg = "Porcupines are cute";
 
-//  function reverseString() {
-//    var msg = "Porcupines are cute";
-//
-//    // do some stuff here to reverse that string into a new variable
-//    var newMsg = "This should be the reversed string";
-//
-//    alert(newMsg);
-//  }
+  // do some stuff here to reverse that string into a new variable
+
+  var msgRev = msg.split("").reverse().join("").split(" ").reverse().join(" ");
+  var msgRevAll = msgRev.split(" ").reverse().join(" ");
+  console.log(msgRevAll);
+
+  var newMsg =msgRevAll;
+  alert(newMsg);
+ }
 
 // Here's a stub of event stuff you could use
-//
+  var button = document.getElementById('reverse-string-button');
+  button.addEventListener('click', reverseString);
 
-//  var button = document.getElementById('reverse-string-button');
-//  button.addEventListener('click', reverseString);
 </script>
 
 
@@ -137,6 +139,7 @@
   </div>
 </div>
 
+<script src="https://code.jquery.com/jquery.js"></script>
 
 
 <h3>Down With Cats!</h3>
@@ -155,6 +158,13 @@
 <script>
   "use strict";
   // put your code here
+
+  function dogPic(evt) {
+    $("#kittenz-rule").attr("src", "https://hackbrightacademy.com/content/uploads/2016/01/puppy-coding.jpg");
+  }
+
+  $('#kittenz-rule').on("dblclick", dogPic);
+
 </script>
 
 <div class="hint">
@@ -183,9 +193,13 @@
   </form>
 </fieldset>
 
+
+
 <script>
   "use strict";
-  // put your code here
+  // Obtain random number
+   var randNum = Math.floor((Math.random() * 100) + 1);
+  
 </script>
 
 
