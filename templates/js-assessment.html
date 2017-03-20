@@ -224,7 +224,7 @@
           $("#play-guessing-game").attr("disabled", false);
 
         }
-        
+
         else if (userInput < randNum){
            $("#number-guessing-msg").html("Hmmm not quite, try a larger number. Your guess is too low.");
         }
@@ -303,6 +303,14 @@
   }
 
   // put your code here
+
+  function getAttackInput(evt) {
+    evt.preventDefault();
+    var attackVictim = {"attack-target": $("#t-rex-target").val()};
+    $.post("/t-rex-attack.json", attackVictim, showTRexResults);
+  }
+
+   $("#t-rex-form").on('submit', getAttackInput);
 
 </script>
 
